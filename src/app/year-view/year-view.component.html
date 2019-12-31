@@ -1,0 +1,14 @@
+<table>
+    <tbody>
+        <ng-container *ngFor="let row of grid; let i = index">
+            <tr>
+                <ng-container *ngFor="let col of row; let j = index">
+                    <td>
+                        <div class="circle" [ngClass]="{'filled': col.selected, 'today': col.today}">
+                        </div>
+                    </td>
+                </ng-container>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

@@ -1,54 +1,30 @@
 .page-body {
     background-color: #242323;
     min-height: 100vh;
-    padding-left: 20%;
-    padding-right: 20%;
 
-    .date-title {
-        text-align: center;
-        padding-bottom: 2rem;
-        padding-top: 2rem;
-
-        .year {
-            font-family: "Roboto";
-            color: white;
-            font-size: 3rem;
-        }
-
-        .month {
-            font-family: "Roboto";
-            color: white;
-            font-size: 2rem;
-        }
+    .left-float {
+        position: absolute;
+        width: 15%;
+        height: 100%;
+        left: 2.5%;
     }
 
-    .btn-transparent {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-
-        &:disabled {
-            opacity: 0.2;
-        }
+    .calendar-container {
+        padding-left: 20%;
+        padding-right: 20%;
     }
 }
 
 @media (max-width: 719px) {
     .page-body {
-        padding: unset;
-
-        .date-title {
-            .year {
-                font-size: 2rem;
-            }
-            .month {
-                font-size: 1.5rem;
-            }
+        .calendar-container {
+            padding: unset;
         }
+    }
+}
 
-        .btn-transparent {
-            font-size: 1.5rem;
-        }
+@media (max-width: 1000px) {
+    .left-float {
+        display: none !important;
     }
 }

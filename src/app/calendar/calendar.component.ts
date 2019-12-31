@@ -21,6 +21,8 @@ export class CalendarComponent implements OnInit {
 
   save: CalendarEntry[] = [];
 
+  displayedDate: moment.Moment;
+
   @Input()
   set date(data: Date) {
     this.buildCalendar(moment(data));
@@ -60,7 +62,38 @@ export class CalendarComponent implements OnInit {
     }
   }
 
+  getSelectedYear(): number {
+    return this.displayedDate.get('year');
+  }
+
+  getSelectedMonth(): string {
+    return this.displayedDate.format("MMMM");
+  }
+
+  progressMonth(): void {
+    this.displayedDate.add(1, 'month');
+    this.buildCalendar(this.displayedDate);
+  }
+
+  regressMonth(): void {
+    this.displayedDate.subtract(1, 'month');
+    this.buildCalendar(this.displayedDate);
+  }
+
+  isNextMonthDisabled(): boolean {
+    var selectedDate = moment(this.displayedDate);
+    return selectedDate.add(1, 'month').isAfter(this.today);
+  }
+
+  isPreviousMonthDisabled(): boolean {
+    var currentYear = this.today.get('year');
+    var previousYear = moment(this.displayedDate).subtract(1, 'month').get('year');
+    
+    return currentYear != previousYear;
+  }
+
   private buildCalendar(inputDate: moment.Moment): void {
+    this.displayedDate = moment(inputDate);
     this.calendar = [[]];
 
     var startOfMonth = moment(inputDate).startOf('month');
