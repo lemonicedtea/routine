@@ -1,0 +1,41 @@
+.page-body {
+    background-color: #242323;
+    min-height: 100vh;
+    padding-left: 20%;
+    padding-right: 20%;
+
+    .date-title {
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+
+        .year {
+            font-family: "Roboto";
+            color: white;
+            font-size: 3rem;
+        }
+
+        .month {
+            font-family: "Roboto";
+            color: white;
+            font-size: 2rem;
+        }
+    }
+
+    .btn-transparent {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+
+        &:disabled {
+            opacity: 0.2;
+        }
+    }
+}
+
+@media (max-width: 719px) {
+    .page-body {
+        padding: unset;
+    }
+}

@@ -1,0 +1,63 @@
+table {
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+
+    thead {
+        th {
+            .day-letter {
+                font-family: 'Roboto';
+                color: #b36205;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    tbody {
+        td {
+            font-family: 'Roboto';
+            color: #a19d99;
+            font-size: 1rem;
+            padding: 30px;
+            text-align: center;
+
+            &.disabled {
+                color: #696663;
+
+                .day {
+                    background-color: #292928;
+
+                    &.selected {
+                        background-color: #1d5e19;
+                    }
+                }
+            }
+
+            .day {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #42413f;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.selected {
+                    background-color: #42cc3b;
+                    color: white;
+                }
+
+                &.today {
+                    border-color: #03f8fc;
+                    border-width: 2px;
+                    border-style: solid;
+                }
+            }
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}

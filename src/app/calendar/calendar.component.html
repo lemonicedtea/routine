@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <tr>
+            <th><div class="day-letter">S</div></th>
+            <th><div class="day-letter">M</div></th>
+            <th><div class="day-letter">T</div></th>
+            <th><div class="day-letter">W</div></th>
+            <th><div class="day-letter">T</div></th>
+            <th><div class="day-letter">F</div></th>
+            <th><div class="day-letter">S</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let row of calendar; let i = index">
+            <tr>
+                <ng-container *ngFor="let col of row; let j = index">
+                    <td [ngClass]="{'disabled': col.disabled}">
+                        <div class="day" (click)="toggleDate(i,j)" [ngClass]="{'selected': col.selected, 'today': col.today, 'clickable': !col.disabled}">
+                            {{col.day}}
+                        </div>
+                    </td>
+                </ng-container>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
