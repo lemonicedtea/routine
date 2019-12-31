@@ -37,5 +37,18 @@
 @media (max-width: 719px) {
     .page-body {
         padding: unset;
+
+        .date-title {
+            .year {
+                font-size: 2rem;
+            }
+            .month {
+                font-size: 1.5rem;
+            }
+        }
+
+        .btn-transparent {
+            font-size: 1.5rem;
+        }
     }
 }

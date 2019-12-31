@@ -61,3 +61,26 @@ table {
 .clickable {
     cursor: pointer;
 }
+
+@media (max-width: 719px) {
+    table {
+        thead {
+            th {
+                .day-letter {
+                    font-size: 1rem;
+                }
+            }
+        }
+        tbody {
+            td {
+                font-size: 0.75rem;
+                padding: 10px;
+
+                .day {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
