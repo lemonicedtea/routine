@@ -33,6 +33,11 @@ export class CalendarComponent implements OnInit {
 
     this.today = moment().startOf('day');
     this.buildCalendar(this.today);
+
+    // preload audio
+    var audio = new Audio();
+    audio.src = "../../../assets/sounds/wow.mp3";
+    audio.load();
   }
 
   getCurrentYear(): number {
