@@ -23,6 +23,14 @@ export class StorageService {
     this.calendarBehaviour.next(data);
   }
 
+  get CalendarGoal(): string {
+    return JSON.parse(localStorage.getItem('CalendarGoal'));
+  }
+
+  set CalendarGoal(data: string) {
+    localStorage.setItem('CalendarGoal', JSON.stringify(data));
+  }
+
   getCalendarBehaviour(): Observable<CalendarEntry[]> {
     if (this.calendarBehaviour == null) 
       this.calendarBehaviour = new BehaviorSubject<CalendarEntry[]>(this.CalendarData);

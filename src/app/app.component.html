@@ -2,9 +2,16 @@
   <div class="fixed d-flex align-items-center justify-content-center">
     <app-year-view></app-year-view>
   </div>
-  <div class="flex-fill d-flex justify-content-center">
-    <app-calendar></app-calendar>
+  
+  <div class="flex-fill">
+    <div class="d-flex justify-content-center">
+      <input class="input-goal" placeholder="What is your goal?" [(ngModel)]="goal" (ngModelChange)="setGoal()">
+    </div>
+    <div class="d-flex justify-content-center">
+      <app-calendar></app-calendar>
+    </div>
   </div>
+  
   <div class="fixed">
 
   </div>

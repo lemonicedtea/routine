@@ -6,6 +6,17 @@
         width: 20%;
     }
 
+    .input-goal {
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
 }
 
 @media (max-width: 719px) {
@@ -14,5 +25,9 @@
 @media (max-width: 1000px) {
     .fixed {
         display: none !important;
+    }
+
+    .input-goal {
+        font-size: 2rem !important;
     }
 }
