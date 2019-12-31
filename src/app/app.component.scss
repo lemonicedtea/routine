@@ -2,29 +2,17 @@
     background-color: #242323;
     min-height: 100vh;
 
-    .left-float {
-        position: absolute;
-        width: 15%;
-        height: 100%;
-        left: 2.5%;
+    .fixed {
+        width: 20%;
     }
 
-    .calendar-container {
-        padding-left: 20%;
-        padding-right: 20%;
-    }
 }
 
 @media (max-width: 719px) {
-    .page-body {
-        .calendar-container {
-            padding: unset;
-        }
-    }
 }
 
 @media (max-width: 1000px) {
-    .left-float {
+    .fixed {
         display: none !important;
     }
 }
