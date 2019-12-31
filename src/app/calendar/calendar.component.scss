@@ -59,15 +59,7 @@ table {
             text-align: center;
 
             &.disabled {
-                color: #696663;
-
-                .day {
-                    background-color: #292928;
-
-                    &.selected {
-                        background-color: #1d5e19;
-                    }
-                }
+                opacity: 0.3;
             }
 
             .day {

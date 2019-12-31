@@ -54,6 +54,7 @@ export class CalendarComponent implements OnInit {
           month: this.calendar[x][y].month,
           year: this.calendar[x][y].year,
         });
+        this.playWowSound();
       } else {
         var idx = this.save.indexOf(this.save.find(c => (c.year != this.calendar[x][y].year && c.month != this.calendar[x][y].month && c.day != this.calendar[x][y].day)));
         this.save.splice(idx, 1);
@@ -163,5 +164,13 @@ export class CalendarComponent implements OnInit {
         futureDay++;
       }
     }
+  }
+
+  private playWowSound(): void {
+    var audio = new Audio();
+    audio.src = "../../../assets/sounds/wow.mp3";
+    audio.volume = 0.3;
+    audio.load();
+    audio.play();
   }
 }
