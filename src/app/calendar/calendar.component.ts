@@ -55,7 +55,8 @@ export class CalendarComponent implements OnInit {
           year: this.calendar[x][y].year,
         });
       } else {
-        this.save = this.save.filter(c => (c.year != this.calendar[x][y].year && c.month != this.calendar[x][y].month && c.day != this.calendar[x][y].day));
+        var idx = this.save.indexOf(this.save.find(c => (c.year != this.calendar[x][y].year && c.month != this.calendar[x][y].month && c.day != this.calendar[x][y].day)));
+        this.save.splice(idx, 1);
       }
 
       this.storageService.CalendarData = this.save;
