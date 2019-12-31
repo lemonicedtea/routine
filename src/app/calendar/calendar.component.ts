@@ -113,19 +113,21 @@ export class CalendarComponent implements OnInit {
     }
 
     // FUTURE
-    var futureDay = 1;
-    var nextMonth = moment(startOfMonth).add(1, 'month');
-    while (col <= DayOfWeek.Saturday) {
-      this.calendar[row][col] = {
-        day: futureDay,
-        month: nextMonth.get('month'),
-        year: nextMonth.get('year'),
-        disabled: true,
-        selected: this.save.find(x => x.day == futureDay && x.month == nextMonth.get('month') && x.year == nextMonth.get('year')) != null,
-        today: moment(lastMonth).startOf('month').set('date', futureDay).isSame(this.today)
-      };
-      col++;
-      futureDay++;
+    if (col != DayOfWeek.Sunday) {
+      var futureDay = 1;
+      var nextMonth = moment(startOfMonth).add(1, 'month');
+      while (col <= DayOfWeek.Saturday) {
+        this.calendar[row][col] = {
+          day: futureDay,
+          month: nextMonth.get('month'),
+          year: nextMonth.get('year'),
+          disabled: true,
+          selected: this.save.find(x => x.day == futureDay && x.month == nextMonth.get('month') && x.year == nextMonth.get('year')) != null,
+          today: moment(lastMonth).startOf('month').set('date', futureDay).isSame(this.today)
+        };
+        col++;
+        futureDay++;
+      }
     }
   }
 }
